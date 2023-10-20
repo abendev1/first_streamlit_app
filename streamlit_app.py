@@ -2,6 +2,7 @@ import streamlit
 import pandas
 import requests
 import snowflake.connector
+from urllin.error import URLError
 
 
 def get_fruityvice_data(this_fruit_choice):
@@ -39,8 +40,6 @@ try:
     streamlit.dataframe(back_from_function)
 except URLERRor as e:
   streamlit.error()
-
-streamlit.stop()
 
 streamlit.header("The fruit load list contains:")
 def get_fruit_load_list():
